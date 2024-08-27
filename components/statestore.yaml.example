@@ -1,0 +1,16 @@
+apiVersion: dapr.io/v1alpha1
+kind: Component
+metadata:
+  name: statestore
+spec:
+  type: state.azure.blobstorage
+  # Supports v1 and v2. Users should always use v2 by default. There is no
+  # migration path from v1 to v2, see `versioning` below.
+  version: v1
+  metadata:
+  - name: accountName
+    value: "<your-account-name>"
+  - name: accountKey
+    value: "<your-account-key>"
+  - name: containerName
+    value: "<your-container-name>"
